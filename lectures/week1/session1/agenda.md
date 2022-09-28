@@ -8,6 +8,7 @@
 - Be kind
 - Cameras
 - 20 min rule
+- [Project Outline Checklist](https://docs.google.com/document/d/12Z-t2yC0hkoRMp2KWwIme_ClPVDvlA--Xeidhk5PdCg/edit#)
 
 # Breakdown
 - Lots of Deadlines - Keep track of them.  
