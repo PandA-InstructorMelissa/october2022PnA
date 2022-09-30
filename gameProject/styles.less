@@ -1,0 +1,54 @@
+.flexrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.flexcolumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@bg: #808080;
+@red: #ff0000;
+@blue: #0000ff;
+@black: #000000;
+@yellow: #ffff00;
+@green: #35ef35;
+
+
+body {
+    .flexcolumn();
+    background-color: @bg;
+    color: @green;
+    width: 85%;
+    margin: auto;
+
+    .deck {
+        .flexrow();
+        flex-wrap: wrap;
+        border: 10px groove @blue;
+
+        .card {
+            .flexcolumn();
+            border: 3px solid @black;
+            padding: 1em;
+            margin: 1em;
+            box-shadow: 5px 5px @black;
+            width: 175px;
+            height: 200px;
+
+            .red, .black {
+                font-size: 2em;
+            }
+
+            .red {
+                color: @red;
+            }
+            .black {
+                color: @black;
+            }
+        }
+    }
+}

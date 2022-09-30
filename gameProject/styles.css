@@ -1,0 +1,52 @@
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #808080;
+  color: #35ef35;
+  width: 85%;
+  margin: auto;
+}
+body .deck {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 10px groove #0000ff;
+}
+body .deck .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #000000;
+  padding: 1em;
+  margin: 1em;
+  box-shadow: 5px 5px #000000;
+  width: 175px;
+  height: 200px;
+}
+body .deck .card .red,
+body .deck .card .black {
+  font-size: 2em;
+}
+body .deck .card .red {
+  color: #ff0000;
+}
+body .deck .card .black {
+  color: #000000;
+}

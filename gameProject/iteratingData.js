@@ -7,7 +7,7 @@ function makeDeck() {
     // console.log("the deck array length before loops:", deck.length)
     for(let s = 0; s < suits.length; s++) {
         for(let v = 0; v < values.length; v++) {
-            let card = {Suit: suits[s], Value: values[v]}
+            let card = {suit: suits[s], value: values[v]}
             // console.log("testing the making of cards:", card)
             deck.push(card)          
         }
@@ -20,14 +20,14 @@ makeDeck()
 
 console.log("the deck", deck)
 console.log("1st card:", deck[0])
-console.log("1st cards suit:", deck[0].Suit)
-console.log("1st cards value:", deck[0].Value)
+console.log("1st cards suit:", deck[0].suit)
+console.log("1st cards value:", deck[0].value)
 
 function pullCard(s, v) {
     var tempArr = []
     var result = ""
     for(let d = 0; d < deck.length; d++) {
-        if (deck[d].Value == v) {
+        if (deck[d].value == v) {
             // console.log("the object pulled:", deck[d])
             tempArr.push(deck[d])
             // console.log("the temp array:", tempArr)
@@ -36,7 +36,7 @@ function pullCard(s, v) {
     }
     // console.log("the temp array:", tempArr)
     for(let t = 0; t < tempArr.length; t++) {
-        if (tempArr[t].Suit == s) {
+        if (tempArr[t].suit == s) {
             // console.log("the result before:", result)
             result = tempArr[t]
             console.log("the result after:", result)
