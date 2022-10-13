@@ -1,70 +1,107 @@
 const suits = ["diamonds", "spades", "clubs", "hearts"]
 const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 let deck = new Array()
+let card = new Object()
 
 function makeDeck() {
-    // console.log("the deck array before loops:", deck)
-    // console.log("the deck array length before loops:", deck.length)
     for(let s = 0; s < suits.length; s++) {
         for(let v = 0; v < values.length; v++) {
             let card = {suit: suits[s], value: values[v]}
-            // console.log("testing the making of cards:", card)
             deck.push(card)          
         }
     }
-    // console.log("the deck array after loops:", deck)
-    // console.log("the deck array length after loops:", deck.length)
     return deck
 }
 makeDeck()
-// console.log("the deck", deck)
-// console.log("1st card:", deck[0])
-// console.log("1st cards suit:", deck[0].suit)
-// console.log("1st cards value:", deck[0].value)
 
-function pullCard(){
-    var value = document.details.num.value
-    var suit = document.details.suit.value
-    console.log("You submitted the following:" , value, suit)
-    document.getElementById('pullCard').innerHTML = ""
+function pullCard() {
     var tempArr = []
     var result = ""
+    var v = document.renderCard.number.value
+    var s = document.renderCard.suit.value
     for(let d = 0; d < deck.length; d++) {
-        if (deck[d].value == value) {
-            console.log("the object pulled:", deck[d])
+        if (deck[d].value == v) {
             tempArr.push(deck[d])
-            console.log("the temp array:", tempArr)
-        } 
+        }  
     }
     for(let t = 0; t < tempArr.length; t++) {
-        if (tempArr[t].suit == suit) {
-            console.log("the result before:", result)
+        if (tempArr[t].suit == s) {
             result = tempArr[t]
             console.log("the result after:", result)
+            card = result
         }
     }
-    console.log("the temp array:", tempArr)
+    renderCard(result)
+    return result   
 }
+function altPullCard() {
+    var result = ""
+    var d = randomCard()
+    result = deck[d]
+    altRenderCard(result)
+    return result   
+}
+altPullCard()
+// pullCard("diamonds", "10")
+// pullCard("spades", "J")
 
-// function pullCard(s, v) {
-//     var tempArr = []
-//     var result = ""
-//     for(let d = 0; d < deck.length; d++) {
-//         if (deck[d].value == v) {
-//             // console.log("the object pulled:", deck[d])
-//             tempArr.push(deck[d])
-//             // console.log("the temp array:", tempArr)
-//         }  
-//     }
-//     // console.log("the temp array:", tempArr)
-//     for(let t = 0; t < tempArr.length; t++) {
-//         if (tempArr[t].suit == s) {
-//             // console.log("the result before:", result)
-//             result = tempArr[t]
-//             console.log("the result after:", result)
-//         }
-//     }
-//     return result
-// }
-// // pullCard("diamonds", "10")
-// // pullCard("spades", "J")
+console.log('testing the deck', deck)
+console.log('the card', card)
+
+function renderCard(card) {
+    document.getElementById('card').innerHTML = ''
+    let theCard = document.createElement('div')
+    let value = document.createElement('span')
+    let suit = document.createElement('span')
+    theCard.className = 'card'
+    if(card.suit == 'diamonds') {
+        suit.className = 'red'
+        value.className = 'red'
+    }
+    else if(card.suit == 'hearts') {
+        suit.className = 'red'
+        value.className = 'red'
+    }
+    else {
+        suit.className = 'black'
+        value.className = 'black'
+    }
+    value.innerHTML = card.value
+    suit.innerHTML =card.suit
+    theCard.appendChild(value)
+    theCard.appendChild(suit)
+    document.getElementById('card').appendChild(theCard)
+}
+renderCard(card)
+function altRenderCard(card) {
+    document.getElementById('randomCard').innerHTML = ''
+    let theCard = document.createElement('div')
+    let value = document.createElement('span')
+    let suit = document.createElement('span')
+    theCard.className = 'card'
+    if(card.suit == 'diamonds') {
+        suit.className = 'red'
+        value.className = 'red'
+    }
+    else if(card.suit == 'hearts') {
+        suit.className = 'red'
+        value.className = 'red'
+    }
+    else {
+        suit.className = 'black'
+        value.className = 'black'
+    }
+    value.innerHTML = card.value
+    suit.innerHTML =card.suit
+    theCard.appendChild(value)
+    theCard.appendChild(suit)
+    document.getElementById('randomCard').appendChild(theCard)
+}
+renderCard(card)
+
+function randomCard(){
+    var card = Math.floor(Math.random()* 52)
+    console.log("the random index", card)
+    return card
+}
+randomCard()

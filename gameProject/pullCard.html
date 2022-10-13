@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Render Deck</title>
+</head>
+<body>
+    <nav>
+        <a href="renderDeck.html">Rendering the Deck</a>
+        <a href="pullCard.html">Pulling 1 card</a>
+        <a href="about.html">About</a>
+    </nav>
+    <h1>Rendering 1 Card</h1>
+    <h2>Chose the suit and value of the card to display</h2>
+    <form name="renderCard">
+        <label for="number">Card Value</label>
+        <select name="number" id="number">
+            <option value="A">A</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="J">J</option>
+            <option value="Q">Q</option>
+            <option value="K">K</option>
+        </select>
+        <label for="suit">Suit</label>
+        <select name="suit" id="suit">
+            <option value="diamonds">Diamonds</option>
+            <option value="spades">Spades</option>
+            <option value="clubs">Clubs</option>
+            <option value="hearts">Hearts</option>
+        </select>
+        <input onclick="pullCard()" type='button' value="Render the Card">
+    </form>
+    <div class="deck" id="card"></div>
+    <h1>OR</h1>
+    <h2>Let the computer chose a random card</h2>
+    <button onclick="altPullCard()">Computer's Choice</button>
+    <div class="deck" id="randomCard"></div>
+    <script src="./pullCard.js"></script>
+</body>
+</html>
