@@ -1,9 +1,13 @@
 const suits = ["diamonds", "spades", "clubs", "hearts"]
+
 const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 let deck = new Array()
 let card = new Object()
-
+// Herro all!
+// Have fun editing all of the comments out of your code ><
 function makeDeck() {
+    // Lets have some fun!!! -- Reena
+    // 
     for(let s = 0; s < suits.length; s++) {
         for(let v = 0; v < values.length; v++) {
             let card = {suit: suits[s], value: values[v]}
@@ -31,9 +35,10 @@ function pullCard() {
             card = result
         }
     }
-    renderCard(result)
+    // renderCard(result)
     return result   
-}
+} // Jason is in DA HOUSE
+
 function altPullCard() {
     var result = ""
     var d = randomCard()
